@@ -1,0 +1,50 @@
+body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:black;
+    width: 75%;
+    margin: 0 auto;
+}
+header
+{
+    font-size: 4em;
+    text-align: center;
+    background-image: linear-gradient(blue,green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.topnav
+{
+    height: 3em;
+    text-align: center;
+    color: black;
+}
+.topnav a
+{
+    display: inline-block;
+    line-height: 3em;
+    padding: 0 .75em;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav a:link, nav a:visited
+{
+    color blue;
+    text-decoration: none;
+}
+.topnav a:hover
+{
+    background-image: linear-gradient(blue,green);
+    color: green;
+    border: 1px solid red;
+}
+.topnav .icon
+{
+    display: none;
+}
+#index
+{
+    background-image: url("/images/Milwaukee.jpg");
+    background-color: black;
+    background-size: cover;
+}
