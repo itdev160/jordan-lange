@@ -44,7 +44,7 @@ nav a:link, nav a:visited
 }
 #index
 {
-    background-image: url("/images/Milwaukee.jpg");
+    background-image: url("../images/milwaukee.JPG");
     background-color: black;
     background-size: cover;
 }
