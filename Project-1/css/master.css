@@ -44,7 +44,11 @@ nav a:link, nav a:visited
 }
 #index
 {
-    background-image: url("../images/milwaukee.JPG");
+    background-image: url("../images/milwaukee.JPG"); /*took forever to find out why it wasent working */
     background-color: black;
     background-size: cover;
+}
+footer
+{
+    color: blue;
 }
