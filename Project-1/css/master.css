@@ -50,5 +50,7 @@ nav a:link, nav a:visited
 }
 footer
 {
+    width: 75%;
+    text-align: center;
     color: blue;
 }

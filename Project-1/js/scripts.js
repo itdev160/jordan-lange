@@ -7,7 +7,6 @@
     /******************************************************
     * Package data and constructor objects
     *******************************************************/
-  
    // notes for code below. be sure to end everything in this array with a , arrays in js for html can be anything strings, doubles, ints etc. 
     //package data array (simulated data source, such as JSON or database recordset)
     
@@ -40,8 +39,18 @@
         lens: '70-200mm',
         brand: 'Canon',
         usecase: 'For long range photography only',
-        rating: 'Very good lens, very expensive lens, but only has very specific use case. ',
-    }
+        rating: 'Very good lens, very expensive lens, but only has very specific use cases. ',
+    },
+    {
+        brand: 'Canon Rebel T6',
+        usecase: 'Used for Photography not a good video platform',
+        rating: 'My first body, was going to sell it till I found out its the only body I own that can keep the shutter open for custom times.',
+    },
+    {
+        brand: 'Canon 90D',
+        usecase: 'My "goto" body. Useful in most situations',
+        rating: 'My third body, bought after my 80D (pictured) suffered screen damage. Good for everything.',
+    },
     /**
      * tried changing these to different stored variables same names ask why it did not work. 
      */
