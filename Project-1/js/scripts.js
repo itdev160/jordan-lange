@@ -58,19 +58,12 @@
         this.usecase = data.usecase;
         this.rating = data.rating;
         this.selector = data.selector; // *** REMEMBER TO ADD THIS IF YOU ADDED IT TO THE DATA OBJECTS ** //
-    }
-    // returns todays date, formatted
-    var getTodaysDate = function() 
-    {
-        var today = new Date();
-    return today.toDateString();
     };
-
     // Returns DOM Element by id
     var getEl = function (id) 
     {
         return document.getElementById(id);
-    }
+    };
 
     //writs the package objects data to the approperate DOM elements utilizing the package selector property
 
@@ -85,24 +78,19 @@
 
         // Write package data to DOM elements
         lensEl.textContent = package.lens;
-        //lensEl.textContent = package.lens;
         brandEl.textContent = package.brand;
         usecaseEl.textContent = package.usecase;
         ratingEl.textContent = package.rating;
-    }
-
-
-    // write date
-    dateEl = getEl('date');
-    dateEl.textContent = getTodaysDate();
-
-
-
+    };
+    var lens = new Package(data[0]);
+    writePackageInfo(lens);
+/**
     for (var i = 0; i < data.length; i++) 
     {
         var package = new Package(data[i]);
         writePackageInfo(package);
     }
+    */
         /**
          * explanation for for loop so i dont look like i just took the easy method out
          * the way for loops work is they run until a condition is satisfied
