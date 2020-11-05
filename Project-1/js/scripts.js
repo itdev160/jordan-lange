@@ -18,42 +18,33 @@
      */
     var data = [
     {
-        lens: '10-18mm',
+        lens: 'a 10-18mm',
         brand: 'Canon',
         usecase: 'Wide Angle Lens',
         rating: 'My "other" go to lens. Alot of my photography is shot with this lens because of its wide angles. Also good for videos as motor is silent. ',
+        selector: 'p1',
     },
     {
-        lens: '18-55mm',
+        lens: 'a 18-55mm',
         brand: 'Canon',
         usecase: 'Basic Kit Lens',
         rating: 'It is alright, not good at wide angles, not good a zooms, kinda an all around use case. ',
+        selector: 'p2',
     },
     {
-        lens: '18-135mm',
+        lens: 'a 18-135mm',
         brand: 'Canon',
         usecase: 'Basic Kit Lens',
         rating: 'Very good lens, my almost go to lens, has the zoom that I need, decent at wide angles. Best for videos as motor is silent ',
+        selector: 'p3',
     },
     {
-        lens: '70-200mm',
+        lens: 'a 70-200mm',
         brand: 'Canon',
         usecase: 'For long range photography only',
         rating: 'Very good lens, very expensive lens, but only has very specific use cases. ',
-    },
-    {
-        brand: 'Canon Rebel T6',
-        usecase: 'Used for Photography not a good video platform',
-        rating: 'My first body, was going to sell it till I found out its the only body I own that can keep the shutter open for custom times.',
-    },
-    {
-        brand: 'Canon 90D',
-        usecase: 'My "goto" body. Useful in most situations',
-        rating: 'My third body, bought after my 80D (pictured) suffered screen damage. Good for everything.',
-    },
-    /**
-     * tried changing these to different stored variables same names ask why it did not work. 
-     */
+        selector: 'p4',
+    }
     ];
     /**
      * Notes for code below. be sure like in java everything ends with a ; if you dont it wigs out
@@ -78,28 +69,24 @@
 
     var writePackageInfo = function(package) 
         {
-        // Get reference to DOM elements
-        var selector = package.selector,
-        lensEl = getEl(selector + '-lens'),
-        brandEl = getEl(selector + '-brand'),
-        usecaseEl = getEl(selector + '-usecase'),
-        ratingEl = getEl(selector + '-rating');
+            // Get reference to DOM elements
+            var selector = package.selector,
+            lensEl = getEl(selector + '-lens'),
+            brandEl = getEl(selector + '-brand'),
+            usecaseEl = getEl(selector + '-usecase'),
+            ratingEl = getEl(selector + '-rating');
 
-        // Write package data to DOM elements
-        lensEl.textContent = package.lens;
-        brandEl.textContent = package.brand;
-        usecaseEl.textContent = package.usecase;
-        ratingEl.textContent = package.rating;
-    };
-    var lens = new Package(data[0]);
-    writePackageInfo(lens);
-/**
+            // Write package data to DOM elements
+            lensEl.textContent = package.lens;
+            brandEl.textContent = package.brand;
+            usecaseEl.textContent = package.usecase;
+            ratingEl.textContent = package.rating;
+        };
     for (var i = 0; i < data.length; i++) 
     {
         var package = new Package(data[i]);
         writePackageInfo(package);
-    }
-    */
+    };
         /**
          * explanation for for loop so i dont look like i just took the easy method out
          * the way for loops work is they run until a condition is satisfied

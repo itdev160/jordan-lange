@@ -2,8 +2,9 @@ body
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:black;
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
+    text-align: center;
 }
 header
 {
@@ -51,6 +52,9 @@ nav a:link, nav a:visited
 footer
 {
     width: 75%;
-    text-align: center;
     color: blue;
+}
+#center
+{
+    text-align: center;
 }
