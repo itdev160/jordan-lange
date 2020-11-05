@@ -8,7 +8,8 @@
     * Package data and constructor objects
     *******************************************************/
   
-    // Package data array (simulated data source, such as JSON or database recordset)
+   // notes for code below. be sure to end everything in this array with a , arrays in js for html can be anything strings, doubles, ints etc. 
+    //package data array (simulated data source, such as JSON or database recordset)
     var data = [
     {
         name: 'emmet',
@@ -30,52 +31,51 @@
         price: 6.75,
         selector: 'p2'
     }
-    ];
-    // (Atom) Package constructor function
-    function Package(data) {
-    this.name = data.name;
-    this.description = data.description;
-    this.author = data.author;
-    this.url = data.url;
-    this.downloads = data.downloads;
-    this.stars = data.stars;
-    this.selector = data.selector; // *** REMEMBER TO ADD THIS IF YOU ADDED IT TO THE DATA OBJECTS ** //
-    
-    this.getFormattedDownloads = function () 
-    {
-        return this.downloads.toLocaleString();
-    };
 
-    this.getFormattedStars = function () 
+    var data = 
+    /**
+     * tried changing these to different stored variables same names ask why it did not work. 
+     */
+    ];
+    /**
+     * Notes for code below. be sure like in java everything ends with a ; if you dont it wigs out
+     */
+    // (Atom) Package constructor function
+    function Package(data) 
     {
-        return this.stars.toLocaleString();
-    };
+        this.name = data.name;
+        this.description = data.description;
+        this.author = data.author;
+        this.url = data.url;
+        this.downloads = data.downloads;
+        this.stars = data.stars;
+        this.selector = data.selector; // *** REMEMBER TO ADD THIS IF YOU ADDED IT TO THE DATA OBJECTS ** //
+        
+        this.getFormattedDownloads = function () 
+        {
+            return this.downloads.toLocaleString();
+        };
+
+        this.getFormattedStars = function () 
+        {
+            return this.stars.toLocaleString();
+        };
     }
-    /******************************************************
-     * Utility functions
-     ******************************************************/
-    // Returns today's date, formatted
+    // returns todays date, formatted
     var getTodaysDate = function() 
     {
         var today = new Date();
     return today.toDateString();
     };
 
-    // Returns DOM element by id.
-    // We're just wrapping document.getElementById
-    // in a shorthand function. If this seems confusing,
-    // then just replace getEl with document.getElementById
-    // in the writePackageInfo function.
+    // Returns DOM Element by id
     var getEl = function (id) 
     {
         return document.getElementById(id);
     }
-    /**
-     * Write's the package object's data to the appropriate
-     * DOM elements utilizing the package selector property.
-     * @param  {Package} package  Package object
-     * @return {void}
-     */
+
+    //writs the package objects data to the approperate DOM elements utilizing the package selector property
+
     var writePackageInfo = function(package) 
         {
         // Get reference to DOM elements
@@ -94,12 +94,8 @@
         starsEl.textContent = package.getFormattedStars();
     }
 
-    /******************************************************
-     * Utilize package data and constuctor objects to
-     * construct each package, then add package data to
-     * the page via DOM functions.
-     ******************************************************/
-    // Write date
+
+    // write date
     dateEl = getEl('date');
     dateEl.textContent = getTodaysDate();
 
@@ -110,4 +106,11 @@
         var package = new Package(data[i]);
         writePackageInfo(package);
     }
+        /**
+         * explanation for for loop so i dont look like i just took the easy method out
+         * the way for loops work is they run until a condition is satisfied
+         * in this case it starts out at 0 (does not start at one because arrays start at 0)
+         * i++ is telling the loop to incriment basicaly telling it to +1 every time its ran
+         * the length is determined by the data.length it basicaly tells the for loop how long the array is and tells it to run that many times.
+         */
 }());
