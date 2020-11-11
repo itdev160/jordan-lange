@@ -5,30 +5,32 @@ var messages = [];
 var messageType = 
 {
     out: 'out-message',
-    in: 'in message',
+    in: 'in-message', //another error here dont forget puncuation matters if its the same here it needs to be the same everywhere (thank windows for control f)
     unknown: 'unknown-message'
 };
 
 //seed data (optional)
 
-/**var data = [
+var data = [
     {
         type: messageType.out,
-        user: 'Mike',
+        user: 'Jordan',
         message:'Hey do you have lunch plans?'
     },
     {
         type: messageType.in,
-        user:'Joe',
+        user:'Mike',
         message: 'No Mike, how about Noodles?'
     },
     {
-
+        type: messageType.out,
+        user: 'Jordan',
+        message:'Ok, Lets go!'
     }
-]
-*/
+];
+
 //message constructor function
-function Message(type,user,message)
+function Message(type, user, message)
 {
     this.type = type;
     this.user = user;
@@ -40,7 +42,7 @@ function createMessageElement(message)
 {
     // create text element for the message
     var messageText = document.createTextNode(
-        message.user = ': ' + message.message // basicaly a system.out.println but its printing variables + : 
+        message.user + ': ' + message.message // basicaly a system.out.println but its printing variables + : // error here watch for those symbols
     );
 
 // creates the element and add the message text
@@ -72,8 +74,9 @@ function addMessageHandler(event)
             type = messageType.in;
             break;
         default:
-            user = 'unkown';
+            user = 'unknown';
             type = messageType.unknown;
+            break;
     }
 
     //create new message
@@ -92,12 +95,34 @@ function addMessageHandler(event)
         messageInput.value = '';
     }
 }
+//loads seed data from above
+function loadSeedData()
+{
+    for(var i = 0; i < data.length; i++)
+    {
+        var message = new Message(data[i].type, data[i].user, data[i].message);
+        messages.push(message);
+    }
+    // loads the preloaded messages
+    var messagesContainerEl = document.getElementById('message-container');
+
+    for(var i = 0; i < messages.length; i++)
+    {
+        var message = messages[i];
+        var el = createMessageElement(message)
+
+        messagesContainerEl.appendChild(el);
+    }
+}
 
 var init = function ()
 {
     // wire event handlers
     document.getElementById('send-button').onclick = addMessageHandler;
     document.getElementById('reply-button').onclick = addMessageHandler;
+
+    //loads the preloaded messages
+    loadSeedData();
 };
 
 init();
